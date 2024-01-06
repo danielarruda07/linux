@@ -31,3 +31,4 @@ vi /etc/prometheus/prometheus.yml
 sudo docker restart meu_prometheus
 
 
+arroz
