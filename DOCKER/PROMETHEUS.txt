@@ -1,0 +1,33 @@
+sudo mkdir -p /docker/prometheus
+
+sudo nano /docker/prometheus/prometheus.yml
+
+Adicione o conteúdo do arquivo de configuração do Prometheus no arquivo prometheus.yml. Aqui está um exemplo simples:
+
+yaml
+Copy code
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+	  
+	  
+docker run -d -p 9090:9090 --name prometheus -v /docker/prometheus:/etc/prometheus prom/prometheus --config.file=/etc/prometheus/prometheus.yml
+
+
+
+ALTERAR ARQUIVO PROMETHEUS.YML DENTRO DO CONTAINER
+
+sudo docker exec -it prometheus_prometheus_1 /bin/sh
+sudo docker exec -it meu_prometheus /bin/sh
+vi /etc/prometheus/prometheus.yml
+	Pressione a tecla i para entrar no modo de inserção.
+	Faça as alterações necessárias no arquivo prometheus.yml.
+	Pressione a tecla Esc para sair do modo de inserção.
+	Digite :wq e pressione Enter para salvar e sair do editor vi.
+sudo docker restart meu_prometheus
+
+

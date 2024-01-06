@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Defina as variáveis com as informações de rede desejadas
+INTERFACE="eth0"
+NEW_IP="192.168.1.100"
+NETMASK="24"
+GATEWAY="192.168.1.1"
+DNS_SERVERS="8.8.8.8 8.8.4.4"
+
+# Modifique as configurações da interface de rede
+echo "Configurando o endereço IP para $NEW_IP"
+sudo ip addr flush dev $INTERFACE
+sudo ip addr add $NEW_IP/$NETMASK dev $INTERFACE
+sudo ip route add default via $GATEWAY
+
+# Configure os servidores DNS
+echo "Configurando servidores DNS"
+sudo rm /etc/resolv.conf
+for DNS in $DNS_SERVERS; do
+    echo "nameserver $DNS" | sudo tee -a /etc/resolv.conf
+done
+
+echo "Configuração de rede concluída."

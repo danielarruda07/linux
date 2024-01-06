@@ -1,0 +1,20 @@
+• LISTAR SERVIÇOS
+
+
+
+
+• DESINSTALAR SERVIÇO APACHE
+
+sudo apt-get purge apache2
+sudo apt-get remove apache2
+sudo apt-get autoremove
+
+
+
+• REINICIAR SERVIÇO
+
+sudo systemctl reload apache2
+
+
+
+
