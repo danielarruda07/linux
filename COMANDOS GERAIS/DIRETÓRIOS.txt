@@ -1,2 +1,3 @@
 • EXCLUIR DIRETÓRIO COM CONTEÚDO
 rm -rf /home/usuario/meudiretorio
+ls

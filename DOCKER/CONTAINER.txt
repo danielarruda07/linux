@@ -1,0 +1,5 @@
+DESINSTALAR TODOS OS CONTAINERS QUE ESTÃO PARADOS
+docker container prune --filter "status=exited"
+
+docker container prune
+

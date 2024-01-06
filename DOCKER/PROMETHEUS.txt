@@ -4,8 +4,7 @@ sudo nano /docker/prometheus/prometheus.yml
 
 Adicione o conteúdo do arquivo de configuração do Prometheus no arquivo prometheus.yml. Aqui está um exemplo simples:
 
-yaml
-Copy code
+
 global:
   scrape_interval: 15s
 
@@ -31,4 +30,3 @@ vi /etc/prometheus/prometheus.yml
 sudo docker restart meu_prometheus
 
 
-arroz
