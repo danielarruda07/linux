@@ -1,32 +1,22 @@
-sudo mkdir -p /docker/prometheus
+Crie o arquivo prometheus.yml:
 
-sudo nano /docker/prometheus/prometheus.yml
-
-Adicione o conteúdo do arquivo de configuração do Prometheus no arquivo prometheus.yml. Aqui está um exemplo simples:
+Crie o arquivo prometheus.yml:
 
 
 global:
   scrape_interval: 15s
-
 scrape_configs:
-  - job_name: 'prometheus'
+  - job_name: 'my-target'
     static_configs:
-      - targets: ['localhost:9090']
-	  
-	  
-docker run -d -p 9090:9090 --name prometheus -v /docker/prometheus:/etc/prometheus prom/prometheus --config.file=/etc/prometheus/prometheus.yml
+      - targets: ['192.168.18.73:9100']  # Substitua pelo IP e porta do seu alvo específico
 
 
 
-ALTERAR ARQUIVO PROMETHEUS.YML DENTRO DO CONTAINER
 
-sudo docker exec -it prometheus_prometheus_1 /bin/sh
-sudo docker exec -it meu_prometheus /bin/sh
-vi /etc/prometheus/prometheus.yml
-	Pressione a tecla i para entrar no modo de inserção.
-	Faça as alterações necessárias no arquivo prometheus.yml.
-	Pressione a tecla Esc para sair do modo de inserção.
-	Digite :wq e pressione Enter para salvar e sair do editor vi.
-sudo docker restart meu_prometheus
+
+docker run -d --name meu-prometheus -p 9090:9090 -v /caminho/do/arquivo/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+
+** trocar o caminho/do/arquivo/prometheus pelo local real do arquivo yml
+
 
 

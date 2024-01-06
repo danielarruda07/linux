@@ -3,3 +3,5 @@ docker container prune --filter "status=exited"
 
 docker container prune
 
+
+agora sim

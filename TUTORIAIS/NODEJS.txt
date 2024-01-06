@@ -1,57 +1,63 @@
 DOCKERFILE - INSTALAÇÃO DO NODEJS
 
-  GNU nano 6.2                                                                                           dockerfile                                                                                                     
-# Use uma imagem base do Node.js
+# Use a imagem oficial do Node.js
 FROM node:latest
 
-# Crie e defina o diretório de trabalho no contêiner
+# Crie um diretório de trabalho dentro do contêiner
 WORKDIR /usr/src/app
 
-# Atualize o npm para a versão mais recente
-RUN npm install -g npm@latest
+# Copie os arquivos do aplicativo para o contêiner
+COPY package*.json ./
+COPY app.js .
 
-# Atualize o npm para a versão mais recente
-RUN npm install -g npm@latest
+# Instale as dependências do aplicativo
+RUN npm install
 
-# Instale o vim usando apt-get
-RUN apt-get update && apt-get install -y vim
-
-# Copie o restante dos arquivos do aplicativo para o diretório de trabalho no contêiner
-COPY . .
+# Exponha a porta que o aplicativo Node.js está usando
+EXPOSE 3000
 
 # Comando para iniciar o aplicativo quando o contêiner for iniciado
 CMD ["node", "app.js"]
 
 
 
+
 CONTEÚDO PACKAGE.JSON
 
 {
-  "name": "meu-app-nodejs",
-  "version": "1.0.0",
-  "description": "Meu aplicativo Node.js",
-  "main": "app.js",
-  "dependencies": {
-    "express": "^4.17.1" // Por exemplo, vamos adicionar o Express como uma dependência
+    "name": "apptesteivan",
+    "version": "1.0.0",
+    "description": "Descrição do seu aplicativo Node.js",
+    "main": "app.js",
+    "dependencies": {
+      "express": "^4.17.1" 
+    },
+    "scripts": {
+      "start": "node app.js"
+    },
+    "author": "arroz-piupiu",
+    "license": "MIT"
   }
-}
-
+  
 
 CONTEÚDO APP.JS
 
-  GNU nano 6.2                                                                                             app.js                                                                                                       
+// app.js
 const http = require('http');
 
-const hostname = '0.0.0.0';
-const port = 4000;
-
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('ARROZ IDTECH DANIEL IVAN\n');
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Agora, Vai da certo. bora ver');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+const PORT = 3000;
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
 });
 
+
+docker build -t nodejs-app .
+
+docker run -p 5000:5000 nodejs-app
+
+docker run -d -p 500:4000 --name node-iva-01 nodejs-app
