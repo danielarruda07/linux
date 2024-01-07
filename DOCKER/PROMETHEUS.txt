@@ -8,15 +8,17 @@ global:
 scrape_configs:
   - job_name: 'my-target'
     static_configs:
-      - targets: ['192.168.18.73:9100']  # Substitua pelo IP e porta do seu alvo específico
+      - targets: ['192.168.18.200:9090']  # Substitua pelo IP e porta do seu alvo específico
 
 
 
 
 
-docker run -d --name meu-prometheus -p 9090:9090 -v /caminho/do/arquivo/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+docker run -d --name promethues -p 9090:9090 -v /home/idtech/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 
 ** trocar o caminho/do/arquivo/prometheus pelo local real do arquivo yml
+
+
 
 
 
