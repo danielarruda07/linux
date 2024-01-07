@@ -1,0 +1,45 @@
+Crie um arquivo de serviço systemd para o contêiner:
+
+Por exemplo, suponha que você tenha um contêiner chamado wordpress1 que deseja iniciar automaticamente após o boot.
+
+Crie um arquivo de serviço, por exemplo, wordpress1.service em /etc/systemd/system/:
+
+bash
+Copy code
+
+
+sudo nano /etc/systemd/system/wordpress1.service
+Adicione o seguinte conteúdo ao arquivo wordpress1.service:
+
+ini
+Copy code
+
+
+------------------------------------
+[Unit]
+Description=WordPress 1 Container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a wordpress1
+ExecStop=/usr/bin/docker stop -t 2 wordpress1
+
+[Install]
+WantedBy=multi-user.target
+------------------------------------
+
+
+Certifique-se de substituir wordpress1 pelo nome do seu contêiner.
+
+Habilitar e iniciar o serviço:
+
+Após salvar o arquivo de serviço, recarregue as unidades do systemd e ative o serviço:
+
+bash
+Copy code
+sudo systemctl daemon-reload
+sudo systemctl enable wordpress1.service
+sudo systemctl start wordpress1.service
+Isso habilitará o serviço wordpress1 para ser executado na inicialização do sistema e iniciará o contêiner conforme especificado no arquivo de serviço.

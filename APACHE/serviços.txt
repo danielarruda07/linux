@@ -1,0 +1,36 @@
+VERIFICAR SERVIÇOS
+systemctl status apache2.service
+
+
+VERIFICAR LOG DE ERRO
+journalctl -xeu apache2.service
+
+
+VERIFICAR ERROS DE SINTAXE
+apachectl configtest
+
+
+VERIFICAR CONFLITO DE PORTAS
+sudo netstat -tuln | grep ':80'
+
+
+REINSTALAR APACHE
+sudo apt-get purge apache2
+sudo apt-get install apache2
+
+PORTAS ABERTAS
+sudo ss -tln
+
+
+PASTA DE LOGS
+sudo cat /var/log/apache2/error.log
+
+
+DESINSTALAR COMPLETAMENTE
+sudo apt-get purge apache2 apache2-utils
+sudo rm -rf /etc/apache2
+sudo rm -rf /var/log/apache2
+
+lista pacotes adicionais
+dpkg -l | grep apache
+#Se houver outros pacotes relacionados ao Apache, você pode removê-los usando o comando apt-get purge nome_do_pacote.

@@ -4,6 +4,6 @@ docker container prune --filter "status=exited"
 docker container prune
 
 
- Isso fará com que o Prometheus recarregue sua configuração sem reiniciar o contêine
+Isso fará com que o Prometheus recarregue sua configuração sem reiniciar o contêine
  
 docker exec -it prometheus /bin/sh -c "kill -HUP 1"

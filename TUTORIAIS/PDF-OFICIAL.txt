@@ -1,0 +1,8 @@
+CURSO - PDF
+
+- lspci ... lista pci
+- lsusb ... lista usb
+- lspci -s 01:00.0 -k ... detalhes
+- lsusb -v -d 1781:0c9f
+
+parei pagina 18 07/01
