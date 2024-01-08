@@ -1,7 +1,7 @@
 # Adicionando um novo target ao arquivo prometheus.yml
-NEW_TARGET="  - job_name: 'novo-target'
+NEW_TARGET="  - job_name: 'w2k22'
     static_configs:
-      - targets: ['192.168.18.201:9100']  # NOVO IP E PORTA
+      - targets: ['192.168.19.52:9182']  # NOVO IP E PORTA
 "
 
 echo "$NEW_TARGET" >> prometheus.yml
