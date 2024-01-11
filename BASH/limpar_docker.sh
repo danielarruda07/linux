@@ -14,9 +14,6 @@ docker network ls
 echo "Imagens:"
 docker images -a
 
-echo "Pressione ENTER para realizar a limpeza..."
-read
-
 echo "Realizando a limpeza..."
 
 # Limpar contêineres não utilizados

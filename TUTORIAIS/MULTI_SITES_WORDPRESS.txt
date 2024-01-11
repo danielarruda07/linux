@@ -17,13 +17,13 @@ services:
       - db
     image: wordpress:latest
     ports:
-      - "192.168.19.64:8000:80"  # Mapeia a porta 8000 do IP público para o WordPress do hostpiu.online
+      - "192.168.19.72:8000:80"  # Mapeia a porta 8000 do IP público para o WordPress do hostpiu.online
     restart: always
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: arroz
       WORDPRESS_DB_PASSWORD: 123
-      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_NAME: wordpresshostpiu
     volumes:
       - wordpress_hostpiu_data:/var/www/html
 
@@ -32,7 +32,7 @@ services:
       - db
     image: phpmyadmin/phpmyadmin
     ports:
-      - "192.168.19.64:8080:80"  # Mapeia a porta 8080 do IP público para o PHPMyAdmin do hostpiu.online
+      - "192.168.19.72:8080:80"  # Mapeia a porta 8080 do IP público para o PHPMyAdmin do hostpiu.online
     restart: always
     environment:
       PMA_HOST: db
@@ -43,13 +43,13 @@ services:
       - db
     image: wordpress:latest
     ports:
-      - "192.168.19.64:8100:80"  # Mapeia a porta 8100 do IP público para o WordPress do idtech.website
+      - "192.168.19.72:8100:80"  # Mapeia a porta 8100 do IP público para o WordPress do idtech.website
     restart: always
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: arroz
       WORDPRESS_DB_PASSWORD: 123
-      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_NAME: wordpressidtech
     volumes:
       - wordpress_idtech_data:/var/www/html
 
@@ -58,7 +58,7 @@ services:
       - db
     image: phpmyadmin/phpmyadmin
     ports:
-      - "192.168.19.64:8180:80"  # Mapeia a porta 8180 do IP público para o PHPMyAdmin do idtech.website
+      - "192.168.19.72:8180:80"  # Mapeia a porta 8180 do IP público para o PHPMyAdmin do idtech.website
     restart: always
     environment:
       PMA_HOST: db
