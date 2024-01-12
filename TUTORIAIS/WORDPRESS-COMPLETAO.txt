@@ -1,0 +1,94 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: senha_root_mysql
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: usuario_mysql
+      MYSQL_PASSWORD: senha_mysql
+
+  hostpiu_online:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "192.168.19.80:8001:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: usuario01_mysql
+      WORDPRESS_DB_PASSWORD: senha_mysql
+      WORDPRESS_DB_NAME: wordpress
+      TABLE_PREFIX: site1_
+    volumes:
+      - hostpiu_online_data:/var/www/html
+
+  idtech_website:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "192.168.19.80:8002:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: usuario02_mysql
+      WORDPRESS_DB_PASSWORD: senha_mysql
+      WORDPRESS_DB_NAME: wordpress
+      TABLE_PREFIX: site2_
+    volumes:
+      - idtech_website_data:/var/www/html
+
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "192.168.19.80:8080:80"
+    restart: always
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: senha_root_mysql
+
+volumes:
+  db_data:
+  hostpiu_online_data:
+  idtech_website_data:
+  
+  
+  
+  
+  
+services:
+db:
+  image: mysql:latest
+  environment:
+    MYSQL_ROOT_PASSWORD: saeed123
+    MYSQL_DATABASE: saeed_db
+    MYSQL_USER: saeedahmed
+    MYSQL_PASSWORD: saeed@2023
+  volumes:
+    - db_data:/var/lib/mysql
+
+wordpress:
+  depends_on:
+    - db
+  image: wordpress:latest
+  ports:
+    - "8000:80"
+  environment:
+    WORDPRESS_DB_HOST: db
+    WORDPRESS_DB_NAME: saeed_db
+    WORDPRESS_DB_USER: saeedahmed
+    WORDPRESS_DB_PASSWORD: saeed@2023
+  volumes:
+    - ./wp-content:/var/www/html/wp-content
+
+volumes:
+  db_data:
+
