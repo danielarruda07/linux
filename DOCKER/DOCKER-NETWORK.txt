@@ -21,3 +21,6 @@ docker network create minha-rede
 
 	• ENCONTRAR O ENDEREÇO IP DA INTERFACE DE REDE PADRÃO DO DOCKER HOST
 ip addr show docker0 | grep -Po 'inet \K[\d.]+'
+
+	* LISTAR REDES E IPS DE TODOS OS CONTAINERS
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
