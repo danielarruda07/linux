@@ -12,10 +12,9 @@ sudo apt install docker-ce
 
 sudo docker --version
 
-#AUTORIZAR USUARIO
-#sudo usermod -aG docker ${USER}
+sudo usermod -aG docker daniel
+newgrp docker
 
-#sudo usermod -aG docker SEU_USUARIO
 #
 #
 #
