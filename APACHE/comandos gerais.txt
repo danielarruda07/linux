@@ -1,0 +1,2 @@
+ANALISAR LOG DE ACESSO APACHE EM CONTAINER
+docker logs -f nome-do-seu-container | grep "GET\|POST\|PUT\|DELETE"

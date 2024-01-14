@@ -1,3 +1,84 @@
+CRIAR UM DOCKERFILE EM UM DIRETORIO
+# Use a imagem oficial do Apache como base
+FROM httpd:2.4
+
+# Ativar módulos diretamente no arquivo de configuração
+RUN sed -i '/LoadModule proxy_module/s/^#//g' /usr/local/apache2/conf/httpd.conf && \
+    sed -i '/LoadModule proxy_http_module/s/^#//g' /usr/local/apache2/conf/httpd.conf
+
+# Copiar o arquivo de configuração do Apache para habilitar o proxy reverso
+COPY ./apache-reverse-proxy.conf /usr/local/apache2/conf/extra/
+
+# Adicionar a configuração do proxy reverso ao arquivo de configuração principal
+RUN echo "Include conf/extra/apache-reverse-proxy.conf" >> /usr/local/apache2/conf/httpd.conf
+
+# Expor a porta 80
+EXPOSE 80
+
+----------------------------------------------------------------------
+CRIAR ARQUI .CONF QUE FOI INDICADO NO ARQUIVO ACIMA
+apache-reverse-proxy.conf
+
+<VirtualHost *:80>
+    ServerName hostpiu.online
+
+    # Configurações para o primeiro site (idtech.website)
+    ProxyPass / http://192.168.19.92:8000/
+    ProxyPassReverse / http://192.168.19.92:8000/
+    RequestHeader set Host "hostpiu.online"
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName idtech.website
+
+    # Configurações para o segundo site (hostpiu.online)
+    ProxyPass / http://192.168.19.92:8001/
+    ProxyPassReverse / http://192.168.19.92:8001/
+    RequestHeader set Host "idtech.website"
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName labidtech.shop
+
+    # Configurações para o segundo site (hostpiu.online)
+    ProxyPass / http://192.168.19.92:8002/
+    ProxyPassReverse / http://192.168.19.92:8002/
+    RequestHeader set Host "labidtech.shop"
+</VirtualHost>
+
+
+
+
+----------------------------------------------------------------------
+CRIE A SUA IMAGEM PERSONALIZADA A PARTIR DO DOCKERFILE
+
+docker build -t daniel03 .
+
+----------------------------------------------------------------------
+CRIAR CONTAINER A PARTIR DA SUA IMAGEM CRIADA
+
+docker run -p 8080:80 meu-apache-proxy - INICIA TEMPORARIAMENTE
+
+docker run -d -p 80:80 daniel02 - 	INICIA PERMANENTEMENTE
+
+
+
+
+
+
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
 Ativar os Módulos Necessários:
 
