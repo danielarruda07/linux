@@ -1,0 +1,19 @@
+DESINSTALAR TODOS OS CONTAINERS QUE ESTÃO PARADOS
+docker container prune --filter "status=exited"
+
+docker container prune
+
+
+Isso fará com que o Prometheus recarregue sua configuração sem reiniciar o contêine
+ 
+docker exec -it prometheus /bin/sh -c "kill -HUP 1"
+
+------------------------------------------------------------------------------------
+
+EXECUTAR COMANDO EM UM CONTAINER COM PERMISSÃO  ROOT
+
+docker exec -u 0 <NOME_DO_CONTAINER> <COMANDO>
+
+
+
+

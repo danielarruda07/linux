@@ -4,3 +4,12 @@ ANALISAR LOG DE ACESSO APACHE EM CONTAINER
 docker logs -f nome-do-seu-container | grep "GET\|POST\|PUT\|DELETE"
 
 
+
+• DESINSTALAR SERVIÇO APACHE
+
+sudo apt-get purge apache2
+sudo apt-get remove apache2
+sudo apt-get autoremove
+
+
+
