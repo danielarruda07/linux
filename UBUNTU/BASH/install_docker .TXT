@@ -15,6 +15,10 @@ sudo docker --version
 sudo usermod -aG docker daniel
 newgrp docker -
 
+qagr
+
+
+
 #
 #
 #
