@@ -1,4 +1,4 @@
-VERIFICAR SERVIÇOS E PROCESSOS EM EXECUÇÃO
+DANIEVERIFICAR SERVIÇOS E PROCESSOS EM EXECUÇÃO
 top
 htop
 ps aux
@@ -11,7 +11,7 @@ pgrep nginx
 --------------------------------------------------------------------------
 SERVIÇOS EM EXECUÇÃO
 systemctl list-units --type=service
-
+dff
 
 
 --------------------------------------------------------------------------
