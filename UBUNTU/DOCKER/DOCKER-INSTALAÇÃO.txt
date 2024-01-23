@@ -26,4 +26,8 @@ AUTORIZAR USUARIO
 
 sudo usermod -aG docker ${USER}
 
+newgrp docker
+
 sudo usermod -aG docker SEU_USUARIO
+
+7
