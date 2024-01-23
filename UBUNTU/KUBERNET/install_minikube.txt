@@ -1,12 +1,27 @@
+sudo apt update
+sudo apt install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
 
 
-wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
-chmod +x minikube-linux-amd64
+sudo snap install kubectl --classic
 
-sudo mv minikube-linux-amd64 /usr/local/bin/minikube
 
-  minikube version
-  
-  
-  Instalando o kubectl
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+
+
+sudo dpkg -i minikube_latest_amd64.deb
+
+rm minikube_latest_amd64.deb
+
+
+
+minikube start --driver=docker
+
+
+minikube status
+
+verificar status
+
