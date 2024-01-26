@@ -1,0 +1,13 @@
+network:
+  version: 2
+  ethernets:
+    ens33:  # Substitua "ens33" pelo nome da sua interface
+      addresses:
+        - 192.168.19.92/24
+      gateway4: 192.168.19.1
+      nameservers:
+        addresses:
+          - 192.168.19.1
+
+
+sudo netplan apply
