@@ -89,3 +89,42 @@ sudo systemctl restart apache2
 
 
 
+MEU ARQUIVO ATUAL
+
+<VirtualHost *:80>
+    ServerName hostpiu.online
+
+    # Configurações para o primeiro site (idtech.website)
+    ProxyPass / http://192.168.19.86:3000/
+    ProxyPassReverse / http://192.168.19.86:3000/
+    RequestHeader set Host "hostpiu.online"
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName idtech.website
+
+    # Configurações para o segundo site (hostpiu.online)
+    ProxyPass / http://192.168.19.92:8001/
+    ProxyPassReverse / http://192.168.19.92:8001/
+    RequestHeader set Host "idtech.website"
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName labidtech.shop
+
+    # Configurações para o segundo site (hostpiu.online)
+    ProxyPass / http://192.168.19.92:8002/
+    ProxyPassReverse / http://192.168.19.92:8002/
+    RequestHeader set Host "labidtech.shop"
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName grafana.hostpiu.online
+
+    # Configurações para o segundo site (hostpiu.online)
+    ProxyPass / http://192.168.19.86:8002/
+    ProxyPassReverse / http://192.168.19.86:8002/
+    RequestHeader set Host "grafana.hostpiu.online"
+</VirtualHost>
+
+
