@@ -1,0 +1,25 @@
+O comando ps é usado para exibir informações sobre processos em sistemas Unix e Linux. Assim como o comando ls, o ps também possui várias opções que permitem personalizar a saída. Aqui estão algumas variações do comando ps:
+
+ps: Lista os processos associados ao terminal atual.
+
+ps aux: Exibe uma lista detalhada de todos os processos em execução no sistema, mostrando informações como PID (identificador do processo), %CPU, %MEM, comandos, etc.
+
+ps -e: Mostra informações sobre todos os processos, não apenas os associados ao terminal atual.
+
+ps -ef: Exibe uma lista detalhada de todos os processos em execução no sistema, semelhante a ps aux.
+
+ps -eH: Mostra uma árvore hierárquica de processos, indicando a relação entre os processos pai e seus filhos.
+
+ps -o: Permite personalizar a saída especificando os campos que você deseja exibir. Por exemplo, ps -eo pid,cmd,%cpu exibirá apenas PID, comando e %CPU.
+
+ps -l: Apresenta uma saída mais longa, incluindo informações adicionais como o estado do processo, o tempo de CPU utilizado e outros detalhes.
+
+ps -u: Exibe processos associados a um usuário específico. Por exemplo, ps -u username mostrará os processos do usuário especificado.
+
+ps -a: Exibe informações sobre todos os processos com exceção dos processos do grupo de controle.
+
+ps -x: Exibe informações sobre processos sem controle terminal associado.
+
+ps -www: Evita que as informações de saída sejam truncadas, mostrando todas as informações disponíveis.
+
+ps --forest: Apresenta a árvore de processos de forma gráfica, mostrando as relações hierárquicas.

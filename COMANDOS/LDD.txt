@@ -1,0 +1,31 @@
+
+O comando ldd é utilizado em sistemas Unix e Linux para exibir as bibliotecas dinâmicas compartilhadas necessárias por um executável. Ele ajuda a listar as dependências de bibliotecas de um programa. Aqui estão algumas variações e opções comuns do comando ldd:
+
+ldd <nome_do_executável>: Exibe as bibliotecas dinâmicas necessárias pelo executável especificado.
+
+ldd -v <nome_do_executável>: Fornece informações detalhadas sobre as bibliotecas, incluindo os caminhos e versões.
+
+ldd -u <nome_do_executável>: Lista apenas as bibliotecas não resolvidas, que não foram encontradas ou carregadas.
+
+ldd -r <nome_do_executável>: Realiza uma verificação de relocação, indicando as entradas que não puderam ser resolvidas.
+
+ldd --version: Exibe a versão do utilitário ldd.
+
+ldd --help: Mostra informações de ajuda e opções disponíveis.
+
+ldd -p: Exibe as bibliotecas em um formato mais compacto.
+
+ldd -c: Habilita a saída colorida, facilitando a leitura das dependências.
+
+ldd -f: Exibe informações adicionais sobre as bibliotecas, como os caminhos de busca.
+
+ldd -d: Lista apenas as bibliotecas compartilhadas diretamente dependentes, sem recursão.
+
+ldd -s: Mostra informações sobre as bibliotecas estáticas, se houver, além das dinâmicas.
+
+ldd -a: Inclui todas as bibliotecas, mesmo aquelas que não são necessárias.
+
+
+VARIAÇÕES
+
+ldd /usr/bin/ps | cut -d " " -f 3 - Filtra as colunas

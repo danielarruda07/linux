@@ -1,0 +1,36 @@
+O comando ls é amplamente utilizado em sistemas Unix e Linux para listar arquivos e diretórios no terminal. Ele possui várias opções que podem ser combinadas para personalizar a saída. Aqui estão algumas variações do comando ls:
+
+ls: Lista os arquivos e diretórios no diretório atual.
+
+ls -l: Lista os arquivos em formato longo, exibindo informações detalhadas, como permissões, proprietário, grupo, tamanho, data de modificação e nome do arquivo.
+
+ls -a: Lista todos os arquivos, incluindo os ocultos, que começam com um ponto (.).
+
+ls -h: Quando usado em conjunto com -l, exibe tamanhos de arquivo em um formato legível para humanos (por exemplo, KB, MB).
+
+ls -R: Lista recursivamente todos os arquivos e subdiretórios.
+
+ls -t: Ordena os arquivos por data de modificação, mostrando os mais recentes primeiro.
+
+ls -S: Ordena os arquivos pelo tamanho, exibindo os maiores primeiro.
+
+ls -i: Mostra os números de inode dos arquivos.
+
+ls -G: Habilita a coloração de saída para distinguir diferentes tipos de arquivos e diretórios.
+
+ls -d: Lista apenas diretórios, não seu conteúdo.
+
+ls -g: Semelhante a -l, mas não exibe informações sobre o grupo.
+
+ls -1: Lista cada arquivo/diretório em uma nova linha.
+
+ls -q: Exibe pontos de interrogação (?) em vez de caracteres não imprimíveis.
+
+ls -u: Ordena os arquivos pela última vez que foram acessados, em vez da última vez que foram modificados.
+
+ls -c: Ordena os arquivos pela última vez que foram alterados.
+
+
+VARIAÇÕES
+
+
