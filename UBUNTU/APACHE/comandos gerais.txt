@@ -2,6 +2,8 @@
 
 ANALISAR LOG DE ACESSO APACHE EM CONTAINER
 docker logs -f nome-do-seu-container | grep "GET\|POST\|PUT\|DELETE"
+docker logs -f nome-do-seu-container | grep "GET\|POST\|PUT\|DELETE" & - analisa em tempo real
+
 
 
 
@@ -10,6 +12,12 @@ docker logs -f nome-do-seu-container | grep "GET\|POST\|PUT\|DELETE"
 sudo apt-get purge apache2
 sudo apt-get remove apache2
 sudo apt-get autoremove
+
+
+DESCOBRIR HORA E DATA, STP SERVICE
+timedatectl
+sudo date
+sudo timedatectl
 
 
 
