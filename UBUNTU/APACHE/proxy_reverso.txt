@@ -59,7 +59,7 @@ CRIAR CONTAINER A PARTIR DA SUA IMAGEM CRIADA
 
 docker run -p 8080:80 meu-apache-proxy - INICIA TEMPORARIAMENTE
 
-docker run -d -p 80:80 daniel03 - 	INICIA PERMANENTEMENTE
+docker run -d -p 80:80 daniel03 - 	INICIA PERMANENTEMENT
 
 
 
