@@ -19,5 +19,7 @@ timedatectl
 sudo date
 sudo timedatectl
 
+asdf
+
 
 
