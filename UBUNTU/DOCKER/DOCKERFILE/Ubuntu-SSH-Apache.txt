@@ -32,5 +32,5 @@ CMD ["/usr/sbin/sshd", "-D"]
 
 
 
-docker build -t daniel03 .
+docker build -t daniel04 .
 docker run -p 2222:22 -p 80:80 -d daniel04
