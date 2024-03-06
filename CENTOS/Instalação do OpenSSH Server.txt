@@ -1,0 +1,24 @@
+1. Instalação do OpenSSH Server:
+Abra um terminal e execute o seguinte comando para instalar o OpenSSH Server:
+sudo yum install openssh-server
+
+2. Iniciar o Serviço SSH:
+Depois de instalar o OpenSSH Server, inicie o serviço usando o seguinte comando:
+sudo systemctl start sshd
+
+3. Habilitar o Serviço SSH na Inicialização:
+Para garantir que o serviço SSH seja iniciado automaticamente durante a inicialização do sistema, execute o seguinte comando:
+sudo systemctl enable sshd
+
+4. Verificar o Status do Serviço SSH:
+Você pode verificar se o serviço SSH está em execução usando o comando:
+sudo systemctl status sshd
+Isso mostrará o status atual do serviço SSH e indicará se está ativo.
+
+5. Configuração do Firewall (Opcional):
+Se você estiver usando um firewall, é importante permitir o tráfego SSH. Você pode adicionar uma regra para permitir conexões SSH usando o seguinte comando:
+sudo firewall-cmd --add-service=ssh --permanent
+sudo firewall-cmd --reload
+
+6. Acessar o Servidor via SSH:
+Agora que o servidor SSH está instalado e em execução, você pode acessá-lo de outro computador usando um cliente SSH. Utilize o seguinte comando:
