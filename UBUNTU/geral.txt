@@ -7,7 +7,7 @@ ps aux
 ENCONTRAR PROCESSOS
 pgrep nginx
 
-
+AS
 --------------------------------------------------------------------------
 SERVIÇOS EM EXECUÇÃO
 systemctl list-units --type=service
