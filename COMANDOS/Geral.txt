@@ -1,0 +1,3 @@
+LDD - Ver as bibliotecas
+CHROOT - 
+
