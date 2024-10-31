@@ -25,7 +25,8 @@ ldd -s: Mostra informações sobre as bibliotecas estáticas, se houver, além d
 
 ldd -a: Inclui todas as bibliotecas, mesmo aquelas que não são necessárias.
 
-
+thstrh
+uytru
 VARIAÇÕES
 
 ldd /usr/bin/ps | cut -d " " -f 3 - Filtra as colunas
