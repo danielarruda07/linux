@@ -1,4 +1,9 @@
 LDD - Ver as bibliotecas
 CHROOT - 
 
-Copiar arquivo de uma pasta local para um servidor usando 
+**** Copiar arquivo de uma pasta local para um servidor linux usando SCP *****
+- Rode esse comando em um terminal cmd no servidor aonde estão os arquivos
+scp C:\temp\zabbix_proxy.conf usuario@192.168.2.46:/home/usuario/
+ - Se você não tiver permissão para gravar direto no  diretório destino e grave na pasta do usuário e após mova para o diretório final
+scp C:\temp\zabbix_proxy.conf usuario@192.168.2.46:/home/usuario/
+sudo mv /home/usuario/zabbix_proxy.conf /etc/zabbix/
