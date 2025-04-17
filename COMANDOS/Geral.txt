@@ -1,3 +1,4 @@
 LDD - Ver as bibliotecas
 CHROOT - 
 
+Copiar arquivo de uma pasta local para um servidor usando 
